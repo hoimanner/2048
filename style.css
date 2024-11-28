@@ -1,0 +1,80 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #faf8ef;
+}
+
+.game-container {
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-gap: 10px;
+    margin: 20px auto;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #eee4da;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: #776e65;
+    border-radius: 5px;
+    transition: background-color 0.2s ease, transform 0.1s ease; /* Animation for color and size */
+}
+
+.cell-2 { background-color: #eee4da; }
+.cell-4 { background-color: #ede0c8; }
+.cell-8 { background-color: #f2b179; }
+.cell-16 { background-color: #f59563; }
+.cell-32 { background-color: #f67c5f; }
+.cell-64 { background-color: #f65e3b; }
+.cell-128 { background-color: #edcf72; }
+.cell-256 { background-color: #edcc61; }
+.cell-512 { background-color: #edc850; }
+.cell-1024 { background-color: #edc53f; }
+.cell-2048 { background-color: #edc22b; }
+
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+#score {
+    font-size: 1.5em;
+    margin-top: 20px;
+}
+
+/* Animation for adding new tiles */
+@keyframes pop {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Apply animation to the cell when it appears */
+.cell {
+    animation: pop 0.5s ease-in-out;
+}
